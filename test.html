@@ -1,0 +1,29 @@
+<html>
+    <script src="https://borisglogerconsulting--partsb.sandbox.my.salesforce-sites.com/events/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true" class="comp"></div>
+
+    <script>
+
+        const appName = 'c:EventShop_LeadRegistrationApp';
+        const componentName = 'c:eventTypesChunk';
+        const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {};
+
+        $Lightning.use(
+            appName,
+            function (){
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp){
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        );
+    </script>
+</html>
