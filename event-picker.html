@@ -1,0 +1,32 @@
+<html>
+    <link href="https://fonts.cdnfonts.com/css/gt-walsheim-trial" rel="stylesheet">
+    <script src="https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true" class="comp" style="font-family: 'Gt Walsheim Trial', sans-serif;"></div>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const appName = 'c:EventShop_LeadRegistrationApp';
+        const componentName = 'c:eventPicker';
+        const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {record-id: urlParams.get('eventTypeId'};
+
+        $Lightning.use(
+            appName,
+            function (){
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp){
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        );
+    </script>
+</html>
