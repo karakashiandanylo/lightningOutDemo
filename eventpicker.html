@@ -12,7 +12,7 @@
         const componentName = 'c:eventPicker';
         const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
         const targetElement = document.querySelector("[data-lightning-out]");
-        const componentAttributes = {recordId: urlParams.get('eventTypeId'), language: 'de'};
+        const componentAttributes = {eventTypeId: urlParams.get('eventTypeId'), language: 'de'};
 
         $Lightning.use(
             appName,
