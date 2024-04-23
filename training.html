@@ -28,5 +28,19 @@
             },
             lightningEndpoint
         );
+
+        let cmp = document.querySelector("c-event-shop_event-picker");
+
+        if (cmp) {
+            cmp.addEventListener(
+                "book",
+                (e) => {
+                    console.log('catched');
+                    console.log(e.target);
+                    // e.target matches elem
+                },
+                false,
+            );
+        }
     </script>
 </html>
