@@ -23,6 +23,7 @@
                     targetElement,
                     function (cmp){
                         console.log('lightning component created');
+                        
                     }
                 );
             },
@@ -30,7 +31,7 @@
         );
 
         let cmp = document.querySelector("c-event-shop_event-picker");
-
+        console.log(cmp);
         if (cmp) {
             cmp.addEventListener(
                 "book",
