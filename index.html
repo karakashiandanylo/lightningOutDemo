@@ -26,5 +26,14 @@
             },
             lightningEndpoint
         );
+
+        document.addEventListener('cardclick', function(e) {
+            console.log('handle');
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'form_submit',
+                event_source: 'lightening out',
+            });
+    });
     </script>
 </html>
