@@ -11,7 +11,7 @@
         const componentName = 'c:eventShop_eventPicker';
         const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
         const targetElement = document.querySelector("[data-lightning-out]");
-        const componentAttributes = {eventTypePath: path, language: 'de'};
+        const componentAttributes = {eventTypePath: path.substring(1), language: 'de'};
 
         $Lightning.use(
             appName,
