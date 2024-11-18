@@ -5,7 +5,7 @@
     <div data-lightning-out="true" class="comp" style="font-family: 'Gt Walsheim Trial', sans-serif;"></div>
 
     <script>
-        const path = window.location.pathname;
+        const path = 'training' + window.location.pathname.split('/training')[1];
 
         const appName = 'c:EventShop_LightningOutManager';
         const componentName = 'c:eventShop_eventPicker';
