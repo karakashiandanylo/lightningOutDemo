@@ -5,17 +5,13 @@
     <div data-lightning-out="true" class="comp" style="font-family: 'Gt Walsheim Trial', sans-serif;"></div>
 
     <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-
-        console.log(window.location);
-        console.log(window.location.search);
+        const path = window.location.pathname;
 
         const appName = 'c:EventShop_LightningOutManager';
         const componentName = 'c:eventShop_eventPicker';
         const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
         const targetElement = document.querySelector("[data-lightning-out]");
-        const componentAttributes = {eventTypeId: urlParams.get('eventTypeId'), language: 'de'};
+        const componentAttributes = {eventTypeId: path, language: 'de'};
 
         $Lightning.use(
             appName,
@@ -26,7 +22,6 @@
                     targetElement,
                     function (cmp){
                         console.log('lightning component created');
-                        
                     }
                 );
             },
