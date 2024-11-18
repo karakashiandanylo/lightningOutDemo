@@ -1,0 +1,45 @@
+<html>
+    <link href="https://fonts.cdnfonts.com/css/gt-walsheim-trial" rel="stylesheet">
+    <script src="https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true" class="comp" style="font-family: 'Gt Walsheim Trial', sans-serif;"></div>
+
+    <script>
+        const path = window.location.pathname;
+
+        const appName = 'c:EventShop_LightningOutManager';
+        const componentName = 'c:eventShop_eventPicker';
+        const lightningEndpoint = 'https://borisglogerconsulting--dev.sandbox.my.salesforce-sites.com/eventShop';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {eventTypeId: path, language: 'de'};
+
+        $Lightning.use(
+            appName,
+            function (){
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp){
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        );
+
+        let cmp = document.querySelector("c-event-shop_event-picker");
+        console.log(cmp);
+        if (cmp) {
+            cmp.addEventListener(
+                "book",
+                (e) => {
+                    console.log('catched');
+                    console.log(e.target);
+                    // e.target matches elem
+                },
+                false,
+            );
+        }
+    </script>
+</html>
