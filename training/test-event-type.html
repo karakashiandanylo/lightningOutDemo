@@ -1,11 +1,11 @@
 <html>
-  <a style="background-color:#78d38b" href="/trainings-kontakt" class="trainingad-cta w-inline-block"><div style="color:#572dbd" class="text-align-center">Inhouse Training anfragen</div></a>
+  <a style="background-color:#78d38b" href="/lightningOutDemo/trainings-kontakt" class="trainingad-cta w-inline-block"><div style="color:#572dbd" class="text-align-center">Inhouse Training anfragen</div></a>
 
   <script>
     const eventTypeApiName = window.location.pathname.slice(window.location.pathname.lastIndexOf('/') + 1, window.location.pathname.length);
     
-    document.querySelectorAll('a[href="/trainings-kontakt"]')?.forEach(element => {
-        element.href = `/trainings-kontakt?eventTypeApiName=${eventTypeApiName}`;
+    document.querySelectorAll('a[href="/lightningOutDemo/trainings-kontakt"]')?.forEach(element => {
+        element.href = `/lightningOutDemo/trainings-kontakt?eventTypeApiName=${eventTypeApiName}`;
     });
   </script>
 </html>
