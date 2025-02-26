@@ -1,0 +1,58 @@
+<html>
+  <form class="contact-main-form" id="web-to-lead" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&amp;orgId=00DFg000001H2JN" method="POST" target="_self">
+  	<input type="hidden" name="oid" value="00D68000003mfoT" style="--autofill-bg-color: rgb(255, 255, 255);">
+    <input type="hidden" id="00NFg00000CeTqnMAF" name="00NFg00000CeTqnMAF" value="" style="--autofill-bg-color: rgb(255, 255, 255);"> <!-- !Pass Event Type Id as value! -->
+    <input type="hidden" id="00NTy000000C4HZ" name="00NTy000000C4HZ" value="true" style="--autofill-bg-color: rgb(255, 255, 255);">
+    <input type="hidden" id="lead_source" name="lead_source" value="Website" style="--autofill-bg-color: rgb(255, 255, 255);">
+    <input type="hidden" id="redirect_url" name="retURL" value="https://www.borisgloger.com/trainings-kontakt?submitted=true" style="--autofill-bg-color: rgb(255, 255, 255);">
+  
+    <select class="form-field orange" id="salutation" name="salutation">
+    	<option value="">– Keine –</option>
+      <option value="Mr.">Herr</option>
+      <option value="Ms.">Frau</option>
+      <option value="Diverse">Divers</option>
+    </select>
+    <br>
+  
+  	<input required="" placeholder="Vorname" class="form-field orange" id="first_name" maxlength="40" name="first_name" size="20" type="text" style="--autofill-bg-color: rgb(255, 255, 255);"><br>
+  
+    <input required="" placeholder="Nachname" class="form-field orange" id="last_name" maxlength="80" name="last_name" size="20" type="text" style="--autofill-bg-color: rgb(255, 255, 255);"><br>
+          
+    <input required="" placeholder="E-Mail" class="form-field orange" id="email" maxlength="80" name="email" size="20" type="text" style="--autofill-bg-color: rgb(255, 255, 255);"><br>
+          
+    <input placeholder="Telefon" class="form-field orange" id="phone" maxlength="40" name="phone" size="20" type="text" style="--autofill-bg-color: rgb(255, 255, 255);"><br>
+          
+  
+    <input placeholder="Firma" class="form-field orange" id="company" maxlength="40" name="company" size="20" type="text" style="--autofill-bg-color: rgb(255, 255, 255);"><br>
+          
+    <textarea required="" placeholder="Beschreibung" class="form-field orange" name="description"></textarea><br>
+          
+    <label class="w-checkbox newsletter-form-checkbox-wrap">
+    	<input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" required="" class="w-checkbox-input newsletter-form-checkbox orange" style="--autofill-bg-color: rgb(255, 255, 255);">
+      
+    	<span class="text-size-14 w-form-label" for="checkbox-2">
+      	Ich habe die aktuelle <a href="https://assets-global.website-files.com/65ae29236f6f9fc19fdd1c43/660e536aca4a9923e11316fd_04042024_bg_Datenschutzerklaerung.pdf" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner persönlichen Daten zu.
+    	</span>
+    </label>
+          
+    <div style="display: flex; justify-content: right;">
+    	<input class="button form orange" style="cursor: pointer; --autofill-bg-color: rgba(56, 152, 236, 0);" type="submit" name="submit" value="Senden">
+    </div>
+  </form>
+
+  <script>
+    const queryString = window.location.search;
+  	const urlParams = new URLSearchParams(queryString);
+  	const eventTypeApiName = urlParams.get('eventTypeApiName');
+    const currentUrl = window.location.href;
+    const delimiter = currentUrl.includes('?') ? '&' : '?';
+  	document.getElementById('00NFg00000CeTqnMAF').value = eventTypeApiName;
+  	document.getElementById('redirect_url').value = currentUrl + delimiter + 'submitted=true';
+  	const isSubmitted = urlParams.get('submitted');
+    
+  	if (isSubmitted) {
+  		document.getElementById('web-to-lead').style.display = 'none';
+    	document.getElementById('thank-you-text').style.display = 'block';
+  	}
+  </script>
+</html>
