@@ -51,7 +51,7 @@
   	const eventTypeApiName = urlParams.get('eventTypeApiName');
     const currentUrl = window.location.href;
     const delimiter = currentUrl.includes('?') ? '&' : '?';
-  	document.getElementById('00NFg00000CeTqnMAF').value = eventTypeApiName;
+  	document.getElementById('00NFg00000CeTqn').value = eventTypeApiName;
   	document.getElementById('redirect_url').value = currentUrl + delimiter + 'submitted=true';
   	const isSubmitted = urlParams.get('submitted');
     
